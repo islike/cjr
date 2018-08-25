@@ -1,0 +1,173 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+textarea{
+	border:none;
+	outline: none;
+	resize: none;
+}
+input[type=text]{
+	border:none;
+	outline: none;
+}
+button, html input[type=button], input[type=submit] {
+	outline: none;
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+a,ins,s,u,del{
+    text-decoration: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+em, i, u {
+    font-style: normal
+}
+html {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    font-family: "PingFangSC", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+.clearfix::before,.clearfix::after{
+    content: '';
+    display: block;
+    line-height: 0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+
