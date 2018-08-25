@@ -5,7 +5,7 @@
       {{this.msg}} <br/>
       <br/>
       <router-link to="/login">
-        <el-button type="primary" round>点击跳转到登录login.vue页面，去开发吧，加油哦！</el-button>
+        <el-button type="primary" round>点击跳转到登录login.vue页面，去开发吧，加油！</el-button>
       </router-link>
       <br/><br/>
       <router-link to="/feedback">
