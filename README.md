@@ -12,3 +12,6 @@ npm install
 # run dev
 npm run dev
 ```
+## 开发文件位置
+>cjr/src/pages/
+在里面找到自己分配到的页面就可以直接开发了
