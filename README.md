@@ -3,13 +3,16 @@
 
 ## 使用步骤
 ```
-# clone repo
+# 克隆库到本地
 git clone https://github.com/islike/cjr.git
 
-# install dependencies
+# 安装依赖
 npm install
 
-# run dev
+# 创建并切换至新分支(name 为自己分配到的任务 如：selfCenter)
+git checkout -b name  
+
+# 运行本地开发
 npm run dev
 ```
 ## 开发文件位置
@@ -24,6 +27,6 @@ git pull
 git add .
 # 将改动提交到HEAD
 git commit -m "update describe"
-# 将改动提交到远端仓库
-git push
+# 将改动提交到远端仓库(name为自己创建的分支名)
+git push origin name
 ```
