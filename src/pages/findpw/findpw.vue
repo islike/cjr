@@ -9,7 +9,7 @@
 import holder from '@/components/header/header'
 import foot from '@/components/footer/footer'
 export default {
-  name: 'register',
+  name: 'findpw',
   components: {
     holder,
     foot

@@ -9,14 +9,14 @@
 import holder from '@/components/header/header'
 import foot from '@/components/footer/footer'
 export default {
-  name: 'postDetail',
+  name: 'createResume',
   components: {
     holder,
     foot
   },
   data () {
     return {
-      msg: '当前是职位详情页面'
+      msg: '当前是创建简历页面'
     }
   }
 }

@@ -5,7 +5,7 @@
       {{this.msg}} <br/>
       <br/>
       <router-link to="/login">
-        <el-button type="primary" round>点击跳转到登录login.vue页面，去开发吧，加油！</el-button>
+        <el-button type="primary" round>点击跳转到登录login.vue页面，去开发吧，加油哦！</el-button>
       </router-link>
       <br/><br/>
       <router-link to="/feedback">
@@ -24,8 +24,8 @@
         <el-button type="info" round>点击跳转到注册register.vue页面，去开发吧，加油哦！</el-button>
       </router-link>
       <br/><br/>
-      <router-link to="/selfdetail">
-        <el-button type="warning" round>点击跳转到个人信息审核selfDetail.vue页面，去开发吧，加油哦！</el-button>
+      <router-link to="/createresume">
+        <el-button type="warning" round>点击跳转到创建简历createResume.vue页面，去开发吧，加油哦！</el-button>
       </router-link>
       <br/><br/>
       <router-link to="/selfcenter">

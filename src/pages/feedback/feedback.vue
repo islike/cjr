@@ -1,7 +1,7 @@
 <template>
   <div>
     <holder></holder>
-    {{this.msg}}
+   <!--  {{this.msg}} -->
     <foot></foot>
   </div>
 </template>

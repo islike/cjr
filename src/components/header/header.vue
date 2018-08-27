@@ -3,13 +3,13 @@
     <div class="header clearfix">
       <div class="logo">
         <h1>
-          <a href="/" title="棒棒团公益，残疾人才招聘网">棒棒团公益，残疾人才招聘网</a>
+          <a href="javascript:;">棒棒团公益，残疾人才招聘网</a>
         </h1>
       </div>
       <nav class="nav clearfix">
         <ul class="home clearfix">
           <li>
-            <router-link to="/">首页</router-link>
+            <router-link to="/" exact>首页</router-link>
           </li>
           <li>
             <router-link to="/fulltime" class="close">全职</router-link>
@@ -25,16 +25,28 @@
           </li>
         </ul>
         <ul class="login clearfix">
-          <li v-if="show">
+          <li v-if="login">
             <router-link to="/login">登录</router-link>
           </li>
-          <li v-if="show">
+          <li v-if="login">
             <router-link to="/register">
               <i class="beforeL">|</i> 注册 <i class="afterL">|</i>
             </router-link>
           </li>
           <li v-else class="photo">
-            <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1116454900,3735379103&fm=27&gp=0.jpg" alt="">
+            <el-dropdown @command="handleCommand" placement="top">
+              <span class="el-dropdown-link">
+                 <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1116454900,3735379103&fm=27&gp=0.jpg">
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item command="a">个人信息</el-dropdown-item>
+                <el-dropdown-item command="b">我的简历</el-dropdown-item>
+                <el-dropdown-item command="c">我的收藏</el-dropdown-item>
+                <el-dropdown-item command="d">我的投递</el-dropdown-item>
+                <el-dropdown-item command="e">账号设置</el-dropdown-item>
+                <el-dropdown-item command="f">退出</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
           </li>
           <li>
             <router-link to="/feedback">反馈</router-link>
@@ -45,16 +57,33 @@
   </header>
 </template>
 <script>
+import Vue from 'vue'
+import { Dropdown, DropdownMenu, DropdownItem } from 'element-ui'
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 export default {
   name: 'holder',
   data () {
     return {
-      show: '1'
+      login: true
+    }
+  },
+  methods: {
+    handleCommand (command) {
+      if (command === 'a') {
+        this.$router.push({name: 'selfDetail'})
+      }
     }
   }
 }
 </script>
 <style lang="less" scoped>
+.el-dropdown-menu{
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 1px 0;
+}
 .active{
   border-bottom: 2px solid #f46d43;
   font-weight: 600;
@@ -75,6 +104,7 @@ header{
       float: left;
       background-image:url('../../../src/assets/images/logo.png');
       a{
+        cursor: default;
         height: 50px;
         display: block;
         text-indent: -99999px;
@@ -151,6 +181,7 @@ header{
           height: 40px;
           border-radius: 20px;
           background-color: #fff;
+          position: relative;
           img{
             width: 40px;
             height: 40px;
