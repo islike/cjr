@@ -13,6 +13,9 @@ import fullTime from '@/pages/fullTime/fullTime'
 import partTime from '@/pages/partTime/partTime'
 import jobFair from '@/pages/jobFair/jobFair'
 import community from '@/pages/community/community'
+import AboutUs from '@/pages/about/AboutUs'
+import JoinUs from '@/pages/about/JoinUs'
+import WebDeclare from '@/pages/about/declare'
 
 Vue.use(Router)
 
@@ -32,7 +35,23 @@ const router = new Router({
     { path: '/register', name: 'register', component: register },
     { path: '/createresume', name: 'createResume', component: createResume },
     { path: '/selfcenter', name: 'selfCenter', component: selfCenter },
-    { path: '/about', name: 'about', component: about }
+    { path: '/about', name: 'about', component: about,children:
+     [
+      {
+        path: 'AboutUs',
+        name: 'AboutUs',
+        component: AboutUs
+      },
+      {
+        path: 'JoinUs',
+        name: 'JoinUs',
+        component:JoinUs
+      },{
+        path: 'declare',
+        name: 'WebDeclare',
+        component: WebDeclare
+      }
+    ]}
   ]
 })
 
