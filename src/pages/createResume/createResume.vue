@@ -41,14 +41,14 @@
                     <el-input class="el-input" v-model="ruleForm.name" placeholder="请输入姓名"></el-input>
                   </el-form-item>
 
-                  <el-form-item label="出生日期" prop="date" class="margin_bottom_10">
+                  <el-form-item label="出生日期" prop="date" class="margin_bottom_10 Select_style">
                     <el-col :span="22">
                         <el-date-picker :clearable="false" :align="right" type="date" placeholder="选择日期" v-model="ruleForm.date"></el-date-picker>
                     </el-col>
                   </el-form-item>
 
 
-                  <el-form-item label="最高学历" prop="educationTop" class="margin_bottom_10">
+                  <el-form-item label="最高学历" prop="educationTop" class="margin_bottom_10 Select_style">
                     <el-select v-model="ruleForm.educationTop" placeholder="请选择">
                       <el-option v-for="(education,index) in Educations" :key="index" :label="education.label" :value="education.value"></el-option>
                     </el-select>
@@ -62,7 +62,7 @@
                     <el-input class="el-input" v-model="ruleForm.phone" placeholder="请输入手机号码"></el-input>
                   </el-form-item>
 
-                  <el-form-item label="残疾类别" prop="Disability" class="margin_bottom_10">
+                  <el-form-item label="残疾类别" prop="Disability" class="margin_bottom_10 Select_style">
                     <el-select v-model="ruleForm.Disability" placeholder="请选择">
                       <el-option v-for="(Disability,index) in Disabilitys" :key="index" :label="Disability.label" :value="Disability.value"></el-option>
                     </el-select>
@@ -113,7 +113,7 @@
                   <el-form label-position="right" size="mini" label-width="80px" :model="ruleForm" :rules="rules" ref="ruleForm">
 
                     <el-form-item label="工作类型" class="margin_bottom_10">
-                      <el-select v-model="ruleForm.workType" placeholder="请选择工作类型">
+                      <el-select v-model="ruleForm.workType" placeholder="请选择工作类型" class="Select_style">
                         <el-option v-for="(workType,index) in workTypes" :key="index" :label="workType.label" :value="workType.value"></el-option>
                       </el-select>
                     </el-form-item>
@@ -122,19 +122,19 @@
                       <el-input class="el-input" v-model="ruleForm.salary" placeholder="请输入期望薪资"></el-input>
                     </el-form-item>
 
-                    <el-form-item label="求职状态" class="margin_bottom_10">
-                      <el-select v-model="ruleForm.JobType" placeholder="请选择">
+                    <el-form-item label="求职状态" class="margin_bottom_10" >
+                      <el-select v-model="ruleForm.JobType" placeholder="请选择" class="Select_style">
                         <el-option v-for="(JobType , index) in JobTypes" :key="index" :label="JobType.label" :value="JobType.value"></el-option>
                       </el-select>
                     </el-form-item>
 
-                    <el-form-item label="民族" class="margin_bottom_10">
+                    <el-form-item label="民族" class="margin_bottom_10 Select_style">
                       <el-select v-model="ruleForm.Nation" placeholder="请选择民族">
                         <el-option v-for="(Nation,index) in Nations" :key="index" :label="Nation.label" :value="Nation.value"></el-option>
                       </el-select>
                     </el-form-item>
 
-                    <el-form-item label="婚姻情况" class="margin_bottom_10">
+                    <el-form-item label="婚姻情况" class="margin_bottom_10 Select_style">
                       <el-select v-model="ruleForm.Marriage" placeholder="请选择婚姻情况">
                         <el-option v-for="(Marriage,index) in Marriages" :key="index" :label="Marriage.label" :value="Marriage.value"></el-option>
                       </el-select>
@@ -180,7 +180,7 @@
                       <el-input v-model="ruleForm.UserHeight" placeholder="请填入身高"></el-input>
                     </el-form-item>
 
-                    <el-form-item label="政治面貌" class="margin_bottom_10">
+                    <el-form-item label="政治面貌" class="margin_bottom_10 Select_style">
                       <el-select v-model="ruleForm.PoliticsFace" placeholder="请选择政治面貌">
                         <el-option v-for="(PoliticsFace,index) in PoliticsFaces" :key="index" :value="PoliticsFace.value" :label="PoliticsFace.label"></el-option>
                       </el-select>
@@ -496,7 +496,7 @@ export default {
         }
       ],
 
-      showSurplus:false
+      showSurplus:true
 
 
     }
@@ -662,6 +662,18 @@ export default {
     color: #fff;
     background: #ff9500;
   }
+
+  .sexSelect >>> span{
+    padding: 7px 43px
+  }
+
+  .Select_style >>> input{
+    width: 200px;
+  }
+
+  .el-input >>> input{
+    width: 200px;
+  }
 </style>
 
 <style>
@@ -670,20 +682,14 @@ export default {
     margin-bottom: 10px !important;
   }
 
-  .sexSelect span{
-    padding: 7px 43px !important;
-  }
-
   .padding_bottom_50{
     padding-bottom: 60px !important;
   }
 
-  .el-input input{
-    width: 200px !important;
-  }
+
 
   input[type=text]{
-    border: ridge 1px;
+
     outline: none;
   }
 </style>
