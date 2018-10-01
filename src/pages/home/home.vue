@@ -2,7 +2,7 @@
   <div>
     <holder></holder>
     <div>
-      我测试一下git，你气不气，我气死你哟
+      这里是首页
     </div>
     <foot></foot>
   </div>
