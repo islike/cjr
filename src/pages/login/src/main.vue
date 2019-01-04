@@ -23,7 +23,7 @@
 <script>
 </script>
 <style scoped>
-.b-mian{width:100%;min-width:1200px;height:780px;margin:0 auto;background:url(../../assets/images/backg.jpg) no-repeat;text-align:center;}
+.b-mian{width:100%; min-width:1200px;height:780px;margin:0 auto;background:url(../../assets/images/backg.jpg) no-repeat;text-align:center;}
 .b-mian .b-header{width:296px;height:67px;margin-top:157px;margin-bottom:30px;}
 .b-mian .b-content{width:500px;height:400px;border-top:10px solid #ff6000;background:#ffffff}
 .b-main .content p{color:#EC4C48;margin-top:30px;margin-bottom:50px;}
