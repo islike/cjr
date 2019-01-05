@@ -1,18 +1,55 @@
 <template>
   <div>
     <holder></holder>
-     <div class="login">
+     <div class="login" v-if="signin">
        <img src="../../assets/images/logo.png">
        <div class="content">
          <div class="header">登录</div>
-         <div class="yonghu inputm"><i class="icon"></i><input placeholder="请输入手机号码/邮箱/用户名" v-model="address"></div>
-         <div class="mima inputm"><i class="icon"></i><input type="password" placeholder="请输入密码" v-model="password"/></div>
-         <div class="forgetword">忘记密码？</div>
+         <div class="yonghu inputm">
+           <div class="icon"></div>
+           <input type="text" placeholder="请输入手机号码/邮箱/用户名" v-model="address">
+          </div>
+         <div class="mima inputm">
+           <div class="icon"></div>
+           <input  type="password" placeholder="请输入密码" v-model="password"/>
+          </div>
+         <div class="forgetword"><div>忘记密码？</div></div>
          <div class="loginbutton">登录</div>
        </div>
        <div class="Lfooter">
-         <span>还没有账号</span>
-         <span class="signup">免费注册</span>
+         <span>还没有账号?</span>
+         <span class="signup" @click="signup">免费注册</span>
+       </div>
+      
+     </div>
+     <div class="login" v-else>
+        <img src="../../assets/images/logo.png">
+       <div class="content">
+         <div class="header" >注册账号</div>
+         <div class=" common">
+           <div style="padding:5px 0">电子邮箱：</div>
+           <div class="youx inputs">
+             <input type="email" v-model="email" placeholder="请输入邮箱账号">
+           </div>
+         </div>
+         <div class="common ">
+           <div style="padding:5px 0">登录密码：</div>
+           <div class="dmima inputs">
+             <input type="password" v-model="password" placeholder="请输入密码">
+           </div>
+         </div>
+         <div class="common">
+           <div style="padding:5px 0">确认密码：</div>
+           <div class="queren inputs">
+             <input type="password" v-model="repassword" placeholder="请确认密码">
+           </div>
+         </div>
+         <div class="xiyi">点击注册表示你同意<span style="color:blue">《用户使用协议》</span></div>
+          <div class="signupbutton">立即注册</div>
+       </div>
+       <div class="Lfooter">
+         <span>已有账号</span>
+         <span class="signup" @click="signup">立即登录</span>
        </div>
      </div>
     <foot></foot>
@@ -31,75 +68,160 @@ export default {
     return {
      address:null,
      password:null,
+     signin:true,
+    }
+  },
+  methods:{
+    signup(){
+      this.signin = !this.signin;
     }
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .login{
-  width:100%;
-  min-width:100%;
-  background:url("../../assets/images/backg.jpg") no-repeat;
-  background-size: 100% 100%;
-     img{
-       display:block;
-       text-align: center;
-       width:296px;
-       height:67px;
-     }
-     .content{
-       position:relative;
-       width:500px;
-       height:400px;
-       border-top:10px solid #ff6000;
-       background:#ffffff;
-       .header{
-          color:#ff6000;
-          text-align: center;
-          margin-top:30px;
-          margin-bottom:30px;
-       }
-       .inputm{
-          position:relative;
-          width:100%;
-          margin:10px 30px; 
-          line-height:20px;
-          border:2px solid #666;
-          .icon{
-            display:inline-block;
-            width:20px;
-            height:20px;
-            position:absolute;
-            top:50%;
-            left:5px;
-            transform: translateY(-50%);
-          }
-          input{
-            padding:20px;
-            
-          }
-       }
-       .forgetword{
+   height:500px;
+   width:100%;
+   background:url(../../assets/images/backg.jpg);
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+   position:relative;
+        
+          img{
+              display: block;
               position:absolute;
-              top:0;
-              right:30px;
-              color:blue;
-       }
-       .loginbutton{
-         text-align:center;
-         color:white;
-         background:#ff6000;
-         width:100%;
-         line-height:30px;
-       }
-     }
-    .Lfooter{
-        text-align:center;
-        .signup{
-          display:inline-block;
-          padding-left:8px;
-          color:#ff6000;
-        }
-    }
-  }
+              top:20px;;
+              left:50%;
+              transform: translateX(-50%);
+              opacity: .5;
+            }
+
+
+            .Lfooter{
+                position:absolute;
+                bottom:80px;
+                left:50%;
+                transform: translateX(-50%);
+                 
+
+                 .signup{
+                   display:inline-block;
+                   padding-left:5px;
+                   color:orangered;
+                 }
+            }
+
+    .content{
+              position:absolute;
+              left:50%;
+              top:80px;
+              transform: translateX(-50%);
+              width:300px;
+              height:280px;
+              border-top:5px solid orangered;
+              background:white;
+                
+                .header{
+                    color:orangered;
+                    text-align:center;
+                    margin:20px 0;
+                    font-size:18px;
+                }
+                
+                .xiyi{
+                  text-align:center;
+                  font-size:12px;
+                  padding-top:5px;
+                }
+                
+                
+                .common{
+                  display:flex;
+                  padding:10px 20px 5px 20px;
+                  font-size:14px;
+                
+             
+                         
+                         .inputs{
+                           flex:1;
+                           display:flex;
+                           border:1px solid #666;
+                           border-radius:3px;
+                           padding:5px 0;
+                           color:#f6f6f6;
+
+                           input{
+                             flex:1;
+                             padding-left:10px;
+                           }
+                         }
+                         
+                         
+                         
+                }
+
+
+                .inputm{
+                  display:-webkit-flex;
+                  display:flex;
+                  margin:20px 20px 0px 20px;
+                  border:1px solid #666;
+                  border-radius:3px;
+                  padding:5px 0;
+
+
+                    .icon{
+                        width:20px;
+                        height:20px;
+                        background:url(../../assets/images/icon.png);
+                        background-position:0px 20px ;
+                        background-size:25px 25px;
+                        
+                    } 
+
+                    input{
+                        flex:1;
+                        color:#666;
+                        padding-left:15px;
+                        line-height:20px;
+                    }
+
+                }
+
+
+              .forgetword{
+              
+                color:blue;
+                position:relative;
+                font-size:12px;
+
+                   div{
+                    position:absolute;
+                    top:3px;
+                    right:20px;
+
+                   }
+              }
+
+              .loginbutton{
+            
+                color:white;
+                background:orangered;
+                margin:90px 20px 10px;
+                text-align:center;
+                line-height:30px;
+                border-radius:5px;
+              }
+              .signupbutton{
+                color:white;
+                background:orangered;
+                margin:20px 20px 10px;
+                text-align:center;
+                line-height:30px;
+                border-radius:5px;
+              }
+            }
+
+
+}
 </style>
