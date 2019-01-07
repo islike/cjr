@@ -13,67 +13,22 @@
            <div class="icon"></div>
            <input  type="password" placeholder="请输入密码" v-model="password"/>
           </div>
-         <div class="forgetword" @click="forgetword"><div>忘记密码？</div></div>
+          <router-link to="/findpw">
+         <div class="forgetword"><div>忘记密码？</div></div>
+         </router-link>
          <div class="loginbutton">登录</div>
        </div>
        <div class="Lfooter">
          <span>还没有账号?</span>
-         <span class="signup" @click="signup">免费注册</span>
+         <router-link to="/register">
+         <span class="signup">免费注册</span>
+         </router-link>
        </div>
       
-     </div>
-     <div class="login" v-if="!signin&&desicion">
-        <img src="../../assets/images/logo.png">
-       <div class="content">
-         <div class="header" >注册账号</div>
-         <div class=" common">
-           <div style="padding:5px 0">电子邮箱：</div>
-           <div class="youx inputs">
-             <input type="email" v-model="email" placeholder="请输入邮箱账号">
-           </div>
-         </div>
-         <div class="common ">
-           <div style="padding:5px 0">登录密码：</div>
-           <div class="dmima inputs">
-             <input type="password" v-model="password" placeholder="请输入密码">
-           </div>
-         </div>
-         <div class="common">
-           <div style="padding:5px 0">确认密码：</div>
-           <div class="queren inputs">
-             <input type="password" v-model="repassword" placeholder="请确认密码">
-           </div>
-         </div>
-         <div class="xiyi">点击注册表示你同意<span style="color:blue">《用户使用协议》</span></div>
-          <div class="signupbutton">立即注册</div>
-       </div>
-       <div class="Lfooter">
-         <span>已有账号</span>
-         <span class="signup" @click="signup">立即登录</span>
-       </div>
+    
      </div>
 
-     <div class="login" v-if="!desicion">
-      <img src="../../assets/images/logo.png">
-       <div class="content">
-         <div class="header" >找回密码</div>
-         <div class=" common">
-           <div style="padding:5px 0">手机号：</div>
-           <div class="youx inputs">
-             <input type="email" v-model="email" placeholder="请输入注册手机号">
-           </div>
-         </div>
-         <div class="common ">
-           <div style="padding:5px 0">验证码：</div>
-           <div class="dmima inputs">
-             <input type="password" v-model="password" placeholder="请输入验证码">
-           </div>
-           <div class="getcode">获取验证码</div>
-         </div>
-         <div class="forgetword" @click.stop="signup1"><div>返回<span style="color:orangered">登录</span></div></div>
-          <div class="yanzhengbutton">立即验证</div>
-       </div>
-     </div>
+     
     <foot></foot>
   </div>
 </template>
@@ -169,7 +124,6 @@ export default {
                 .common{
                   display:flex;
                   padding:10px 20px 5px 20px;
-                  font-size:14px;
                 
              
                          
