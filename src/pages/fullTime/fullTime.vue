@@ -23,11 +23,5 @@ export default {
 }
 </script>
 <style scoped>
-h1{
-  text-align: center;
-  font-weight: 900;
-  font-size: 40px;
-  height: 300px;
-  line-height: 300px;
-}
+
 </style>
