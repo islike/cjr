@@ -58,9 +58,9 @@
        <div class="content">
          <div class="header" >找回密码</div>
          <div class=" common">
-           <div style="padding:5px 0">电子邮箱：</div>
+           <div style="padding:5px 0">手机号：</div>
            <div class="youx inputs">
-             <input type="email" v-model="email" placeholder="请输入邮箱账号">
+             <input type="email" v-model="email" placeholder="请输入注册手机号">
            </div>
          </div>
          <div class="common ">
@@ -68,13 +68,10 @@
            <div class="dmima inputs">
              <input type="password" v-model="password" placeholder="请输入验证码">
            </div>
-           <div class="yancode">
-             <img src="undefined" width="20px">
-           </div>
-           <div class="changebutton">换一换</div>
+           <div class="getcode">获取验证码</div>
          </div>
          <div class="forgetword" @click.stop="signup1"><div>返回<span style="color:orangered">登录</span></div></div>
-          <div class="signupbutton">立即验证</div>
+          <div class="yanzhengbutton">立即验证</div>
        </div>
      </div>
     <foot></foot>
@@ -183,11 +180,19 @@ export default {
                            border-radius:3px;
                            padding:5px 0;
                            color:#f6f6f6;
+                           margin-right:8px;
 
                            input{
                              flex:1;
                              padding-left:10px;
                            }
+                         }
+
+                         .getcode{
+                           background:#666;
+                           padding:5px 5px;
+                           border-radius:3px;
+
                          }
                          
                          
@@ -250,6 +255,14 @@ export default {
                 color:white;
                 background:orangered;
                 margin:20px 20px 10px;
+                text-align:center;
+                line-height:30px;
+                border-radius:5px;
+              }
+              .yanzhengbutton{
+                color:white;
+                background:orangered;
+                margin:80px 20px 10px;
                 text-align:center;
                 line-height:30px;
                 border-radius:5px;
