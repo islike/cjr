@@ -6,7 +6,7 @@
        <div class="content">
          <div class="header">登录</div>
          <div class="yonghu inputm">
-           <div class="icon"></div>
+           <div class="icon1"></div>
            <input type="text" placeholder="请输入手机号码/邮箱/用户名" v-model="address">
           </div>
          <div class="mima inputm">
@@ -212,11 +212,22 @@ export default {
                     .icon{
                         width:20px;
                         height:20px;
-                        background:url(../../assets/images/icon.png);
-                        background-position:0px 20px ;
-                        background-size:25px 25px;
+                        background:url(../../assets/images/mima.png);
+                        
+                        background-size:20px 20px;
                         
                     } 
+                     
+
+                     .icon1{
+                        width:20px;
+                        height:20px;
+                        background:url(../../assets/images/zh.png);
+                        
+                        background-size:20px 20px;
+                        
+                    } 
+
 
                     input{
                         flex:1;
