@@ -1,7 +1,7 @@
 <template>
   <div>
     <holder></holder>
-     <div class="login" v-if="signin">
+     <div class="login" v-if="signin&&desicion">
        <img src="../../assets/images/logo.png">
        <div class="content">
          <div class="header">登录</div>
@@ -13,7 +13,7 @@
            <div class="icon"></div>
            <input  type="password" placeholder="请输入密码" v-model="password"/>
           </div>
-         <div class="forgetword"><div>忘记密码？</div></div>
+         <div class="forgetword" @click="forgetword"><div>忘记密码？</div></div>
          <div class="loginbutton">登录</div>
        </div>
        <div class="Lfooter">
@@ -22,7 +22,7 @@
        </div>
       
      </div>
-     <div class="login" v-else>
+     <div class="login" v-if="signin&&desicion">
         <img src="../../assets/images/logo.png">
        <div class="content">
          <div class="header" >注册账号</div>
@@ -52,6 +52,10 @@
          <span class="signup" @click="signup">立即登录</span>
        </div>
      </div>
+
+     <div class="login" v-if="!desicion">
+       5657578
+     </div>
     <foot></foot>
   </div>
 </template>
@@ -69,11 +73,15 @@ export default {
      address:null,
      password:null,
      signin:true,
+     desicion:true,
     }
   },
   methods:{
     signup(){
       this.signin = !this.signin;
+    },
+    forgetword(){
+      this.desicion = !this.desicion
     }
   }
 }
