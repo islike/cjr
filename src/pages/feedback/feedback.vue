@@ -23,6 +23,9 @@
            <div>联系方式：</div>
            <input type="number" maxSize=11 placeholder="请输入联系方式" v-model="meassage">
          </div>
+         <div class="submit">
+           <div>提交</div>
+           </div>
     </div>
     <foot></foot>
   </div>
@@ -71,6 +74,22 @@ export default {
              }
            }
            
-     }
+       }
+
+       .submit{
+         display:flex;
+         justify-content:center;
+         color:white;
+         margin-top:50px;
+        
+
+           div{
+           
+              text-align:center;
+              padding:5px 50px;
+              background:orangered;
+              border-radius:5px;
+           }
+       }
    }
 </style>
