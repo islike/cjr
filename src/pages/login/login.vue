@@ -1,7 +1,7 @@
 <template>
   <div>
     <holder></holder>
-     <div class="login" v-if="signin&&desicion">
+     <div class="login" v-if="signin">
        <img src="../../assets/images/logo.png">
        <div class="content">
          <div class="header">登录</div>
@@ -22,7 +22,7 @@
        </div>
       
      </div>
-     <div class="login" v-if="signin&&desicion">
+     <div class="login" v-if="!signin&&desicion">
         <img src="../../assets/images/logo.png">
        <div class="content">
          <div class="header" >注册账号</div>
@@ -54,7 +54,28 @@
      </div>
 
      <div class="login" v-if="!desicion">
-       5657578
+      <img src="../../assets/images/logo.png">
+       <div class="content">
+         <div class="header" >找回密码</div>
+         <div class=" common">
+           <div style="padding:5px 0">电子邮箱：</div>
+           <div class="youx inputs">
+             <input type="email" v-model="email" placeholder="请输入邮箱账号">
+           </div>
+         </div>
+         <div class="common ">
+           <div style="padding:5px 0">验证码：</div>
+           <div class="dmima inputs">
+             <input type="password" v-model="password" placeholder="请输入验证码">
+           </div>
+           <div class="yancode">
+             <img src="undefined" width="20px">
+           </div>
+           <div class="changebutton">换一换</div>
+         </div>
+         <div class="forgetword" @click.stop="signup1"><div>返回<span style="color:orangered">登录</span></div></div>
+          <div class="signupbutton">立即验证</div>
+       </div>
      </div>
     <foot></foot>
   </div>
@@ -81,7 +102,12 @@ export default {
       this.signin = !this.signin;
     },
     forgetword(){
-      this.desicion = !this.desicion
+      this.desicion = false
+      this.signin = false;
+    },
+    signup1(){
+      this.signin = true;
+      this.desicion = true
     }
   }
 }
