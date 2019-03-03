@@ -9,6 +9,7 @@
           v-html="item"
           :class=" current == index ? 'redright' : ''"
           @click="current = index"
+          :key="index"
         ></div>
       </div>
       <div class="right">
@@ -256,7 +257,7 @@ export default {
   font-size: 14px;
 
   .left {
-    width: 150px;
+    width: 200px;
     height: 100px;
 
     .redright {
@@ -272,7 +273,7 @@ export default {
 
   .right {
     flex: auto;
-    position:relative;
+    position: relative;
     margin-left: 30px;
     margin-bottom: 30px;
     background: white;
@@ -316,7 +317,6 @@ export default {
 
     .accountSafe {
       padding: 30px 0 0 20px;
-      position: relative;
 
       .accountup {
         color: black;
@@ -345,17 +345,15 @@ export default {
           }
         }
       }
-      .accountsave{
-        position:absolute;
-        bottom:10%;
-        left:50%;
+      .accountsave {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
         transform: translateX(-50%);
-        padding:5px 40px;
-        color:white;
+        padding: 5px 40px;
+        color: white;
         background: orangered;
-        
-        
-        
+        border-radius: 2px;
       }
     }
   }
