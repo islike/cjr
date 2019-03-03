@@ -192,7 +192,36 @@
         <div v-else-if="current == 1">我的简历</div>
         <div v-else-if="current == 2">已收藏</div>
         <div v-else-if="current == 3">已投递</div>
-        <div v-else>账号安全</div>
+        <div v-else class="accountSafe">
+          <div class="accountup">
+            <div style="padding-bottom:30px">更改邮箱账号</div>
+            <div class="Acontent">
+              <span>邮件账号:</span>
+              <input type="email" placeholder="请输入邮箱账号">
+              <div class="subcode" style="display:inline-block;">发送验证码</div>
+            </div>
+            <div class="Acontent">
+              <span>验证码:</span>
+              <input placeholder="请输入验证码">
+            </div>
+          </div>
+          <div class="accountup">
+            <div style="padding-top:30px">更改密码</div>
+            <div class="Acontent">
+              <span>原始密码:</span>
+              <input type="text" placeholder="请输入密码">
+            </div>
+            <div class="Acontent">
+              <span>新密码:</span>
+              <input type="text" placeholder="请输入新密码">
+            </div>
+            <div class="Acontent">
+              <span>确认密码:</span>
+              <input type="text" placeholder="请再输入一次密码">
+            </div>
+          </div>
+          <div class="accountsave">保存</div>
+        </div>
       </div>
     </div>
 
@@ -242,7 +271,8 @@ export default {
   }
 
   .right {
-    flex: 1;
+    flex: auto;
+    position:relative;
     margin-left: 30px;
     margin-bottom: 30px;
     background: white;
@@ -280,6 +310,38 @@ export default {
           border: 1px solid #ccc;
           padding: 3px 0px 3px 10px;
           border-radius: 5px;
+        }
+      }
+    }
+
+    .accountSafe {
+      padding: 30px 0 0 20px;
+
+      .accountup {
+        color: black;
+
+        .Acontent {
+          padding-left: 100px;
+          color: #666;
+          padding-top: 10px;
+          span {
+            display: inline-block;
+            width: 65px;
+            text-align: right;
+            padding-right: 10px;
+          }
+          input {
+            padding: 5px 5px;
+            border: 1px solid #666;
+            outline: none;
+            width: 200px;
+          }
+          .subcode {
+            padding: 3px 2px;
+            margin-left: 30px;
+            border-radius: 2px;
+            border: 1px solid #666;
+          }
         }
       }
     }
