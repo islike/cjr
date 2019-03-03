@@ -101,6 +101,7 @@ export default {
                              flex:1;
                              width:50px;
                              padding-left:10px;
+                             outline: none;
                            }
                          }
                .getcode{
