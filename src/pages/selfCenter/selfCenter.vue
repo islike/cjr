@@ -316,6 +316,7 @@ export default {
 
     .accountSafe {
       padding: 30px 0 0 20px;
+      position: relative;
 
       .accountup {
         color: black;
@@ -343,6 +344,18 @@ export default {
             border: 1px solid #666;
           }
         }
+      }
+      .accountsave{
+        position:absolute;
+        bottom:10%;
+        left:50%;
+        transform: translateX(-50%);
+        padding:5px 40px;
+        color:white;
+        background: orangered;
+        
+        
+        
       }
     }
   }
