@@ -190,7 +190,80 @@
             <div>保存</div>
           </div>
         </div>
-        <div v-else-if="current == 1">我的简历</div>
+        <div v-else-if="current == 1">
+          <div style="color:black;padding:20px">
+            上传附件简历
+            <span style="color:#666;">(默认简历)</span>
+          </div>
+          <div class="j-table">
+            <div class="j-zhuti" v-for="(item, index) in zhuti" :key="index">{{item}}</div>
+            <div class="jianli item">
+              <input
+                type="checkbox"
+                value="1.我的简历A.pdf"
+                style="outline:none;width:15px;height:15px;vertical-align:middle"
+              >
+              <span
+                style="color:blue;padding-left:10px;vertical-align:middle"
+                @click="c"
+              >1.我的简历A.pdf</span>
+            </div>
+            <div class="switch item">
+              <template>
+                <el-switch
+                  v-model="value1"
+                  :active-value="1"
+                  width="46"
+                  :inactive-value="0"
+                  active-text="开"
+                  inactive-text="关"
+                  active-color="orangered"
+                ></el-switch>
+              </template>
+            </div>
+            <div class="item">
+              <div>上传|删除</div>
+            </div>
+            <div class="jianli item">
+              <input
+                type="checkbox"
+                value="1.我的简历A.pdf"
+                style="outline:none;width:15px;height:15px;vertical-align:middle"
+              >
+              <span
+                style="color:blue;padding-left:10px;vertical-align:middle"
+                @click="c"
+              >2.我的简历A.pdf</span>
+            </div>
+            <div class="switch item">
+              <template>
+                <el-switch
+                  v-model="value2"
+                  :active-value="1"
+                  width="46"
+                  :inactive-value="0"
+                  active-text="开"
+                  inactive-text="关"
+                  active-color="orangered"
+                ></el-switch>
+              </template>
+            </div>
+            <div class="item">
+              <div>上传|删除</div>
+            </div>
+          </div>
+          <div
+            class="accountsave"
+            style="position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 40px;
+        color: white;
+        background: orangered;
+        border-radius: 2px;"
+          >保存</div>
+        </div>
         <div v-else-if="current == 2">已收藏</div>
         <div v-else-if="current == 3">已投递</div>
         <div v-else class="accountSafe">
@@ -232,6 +305,13 @@
 <script>
 import holder from "@/components/header/header";
 import foot from "@/components/footer/footer";
+import Vue from "vue";
+
+import { Checkbox } from "element-ui";
+import { Switch } from "element-ui";
+Vue.use(Checkbox);
+Vue.use(Switch);
+
 export default {
   name: "selfCenter",
   components: {
@@ -241,8 +321,17 @@ export default {
   data() {
     return {
       feather: ["个人信息", "我的简历", "已收藏", "已投递", "账号安全"],
-      current: 0
+      current: 0,
+      zhuti: ["简历名称", "默认设置", "操作"],
+      checked: false,
+      value2: 0,
+      value1: 1
     };
+  },
+  methods: {
+    c() {
+      alert("_____________");
+    }
   }
 };
 </script>
@@ -315,6 +404,27 @@ export default {
       }
     }
 
+    .j-table {
+      padding: 30px 0 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 50px;
+      margin-right: 10px;
+
+      .j-zhuti {
+        max-width: 33.33%;
+        width: 33.33%;
+        text-align: center;
+        background: #ccc;
+        padding: 10px 0;
+      }
+      .item {
+        max-width: 33.33%;
+        width: 33.33%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
     .accountSafe {
       padding: 30px 0 0 20px;
 
