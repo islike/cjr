@@ -212,12 +212,10 @@
               <template>
                 <el-switch
                   v-model="value1"
-                  :active-value="1"
-                  width="46"
-                  :inactive-value="0"
                   active-text="开"
                   inactive-text="关"
                   active-color="orangered"
+                  @change="achange"
                 ></el-switch>
               </template>
             </div>
@@ -239,12 +237,10 @@
               <template>
                 <el-switch
                   v-model="value2"
-                  :active-value="1"
-                  width="46"
-                  :inactive-value="0"
                   active-text="开"
                   inactive-text="关"
                   active-color="orangered"
+                  @change="bchange"
                 ></el-switch>
               </template>
             </div>
@@ -264,8 +260,69 @@
         border-radius: 2px;"
           >保存</div>
         </div>
-        <div v-else-if="current == 2">已收藏</div>
-        <div v-else-if="current == 3">已投递</div>
+        <div v-else-if="current == 2" style="padding-left:20px;">
+          <div class="collect">
+            <div class="collect-header" v-for="(item,) in headitem" :key="item.id">{{item.name}}</div>
+          </div>
+
+          <div
+            class="collect-item"
+            v-for="(item,index) in post.slice((currentpage- 
+
+    1)*pagesize,currentpage*pagesize)"
+            :key="index"
+          >
+            <div class="collect-item-div">
+              <input type="checkbox" class="postinput">
+              <span style="vertical-align:middle; padding-left: 10px;">{{item.positionname}}</span>
+            </div>
+            <div class="collect-item-div" style="vertical-align:middle;">{{item.companyname}}</div>
+            <div class="collect-item-div" style="vertical-align:middle;">{{item.posttime}}</div>
+            <div class="collect-item-div" style="color:blue;vertical-align:middle;">申请|删除</div>
+          </div>
+          <div class="collect-bottom">
+            <el-pagination
+              layout="total,sizes,prev, pager, next,jumper"
+              background="true"
+              :total="post.length"
+              :current-page="currentpage"
+              :page-sizes="[1,2,3,4,5]"
+              :page-size="pagesize"
+              @size-change="handlesizepage"
+              @current-change="handlecurrentchange"
+            ></el-pagination>
+          </div>
+        </div>
+        <div v-else-if="current == 3">
+          <div class="collect">
+            <div class="collect-header" v-for="(item,) in headitem" :key="item.id">{{item.name}}</div>
+          </div>
+
+          <div
+            class="collect-item"
+            v-for="(item,index) in post.slice((currentpage- 
+
+    1)*pagesize,currentpage*pagesize)"
+            :key="index"
+          >
+            <div class="collect-item-div">{{item.positionname}}</div>
+            <div class="collect-item-div">{{item.companyname}}</div>
+            <div class="collect-item-div">{{item.posttime}}</div>
+            <div class="collect-item-div">浏览</div>
+          </div>
+          <div class="collect-bottom">
+            <el-pagination
+              layout="total,sizes,prev, pager, next,jumper"
+              background="true"
+              :total="post.length"
+              :current-page="currentpage"
+              :page-sizes="[1,2,3,4,5]"
+              :page-size="pagesize"
+              @size-change="handlesizepage"
+              @current-change="handlecurrentchange"
+            ></el-pagination>
+          </div>
+        </div>
         <div v-else class="accountSafe">
           <div class="accountup">
             <div style="padding-bottom:30px">更改邮箱账号</div>
@@ -309,9 +366,10 @@ import Vue from "vue";
 
 import { Checkbox } from "element-ui";
 import { Switch } from "element-ui";
+import { Pagination } from "element-ui";
 Vue.use(Checkbox);
 Vue.use(Switch);
-
+Vue.use(Pagination);
 export default {
   name: "selfCenter",
   components: {
@@ -324,17 +382,120 @@ export default {
       current: 0,
       zhuti: ["简历名称", "默认设置", "操作"],
       checked: false,
-      value2: 0,
-      value1: 1
+      value2: false,
+      value1: true,
+      headitem: [
+        {
+          name: "职位名称",
+          id: 0
+        },
+        {
+          name: "公司名称",
+          id: 1
+        },
+        {
+          name: "收藏时间",
+          id: 2
+        },
+        {
+          name: "操作",
+          id: 3
+        }
+      ],
+      post: [
+        {
+          positionname: "缝纫机操作工111",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
+        },
+        {
+          positionname: "缝纫机操作工222",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
+        },
+        {
+          positionname: "缝纫机操作工333",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
+        },
+        {
+          positionname: "缝纫机操作工444",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
+        }
+      ],
+      pagesize: 1,
+      currentpage: 1
     };
   },
   methods: {
     c() {
-      alert("_____________");
+      console.log(111);
+    },
+    achange(val) {
+      if (this.value2) {
+        this.value2 = !val;
+      } else {
+        this.value2 = false;
+      }
+    },
+    bchange(val) {
+      if (this.value1) {
+        this.value1 = !val;
+      } else {
+        this.value1 = false;
+      }
+    },
+    handlesizepage(size) {
+      this.pagesize = size;
+    },
+    handlecurrentchange(page) {
+      this.currentpage = page;
     }
   }
 };
 </script>
+<style>
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: orangered !important;
+}
+.el-switch__label--left {
+  position: relative;
+  left: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+.el-switch__label--right {
+  position: relative;
+  right: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+.el-switch__label.is-active {
+  z-index: 1111;
+  color: #fff;
+}
+.el-switch__label--left {
+  position: relative;
+  left: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+.el-switch__label--right {
+  position: relative;
+  right: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+.el-switch__label--right.is-active {
+  z-index: 1111;
+  color: #fff !important;
+}
+.el-switch__label--left.is-active {
+  z-index: 1111;
+  color: #9c9c9c !important;
+}
+</style>
 <style lang="less" scoped>
 .selfcenter {
   background: #ccc;
@@ -424,6 +585,44 @@ export default {
         text-align: center;
         padding: 10px 0;
       }
+    }
+
+    .collect {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 40px;
+      .collect-header {
+        max-width: 25%;
+        width: 25%;
+        text-align: center;
+        background: #ccc;
+        padding: 10px 0;
+      }
+    }
+    .collect-item {
+      display: flex;
+      flex-wrap: wrap;
+
+      .collect-item-div {
+        max-width: 25%;
+        width: 25%;
+        text-align: center;
+        padding: 10px 0;
+
+        .postinput {
+          outline: none;
+          vertical-align: middle;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    .collect-bottom {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
     }
     .accountSafe {
       padding: 30px 0 0 20px;
