@@ -6,9 +6,9 @@ const ajax = axios.create({
 
 /**
  * interface CpInfoParams {
- *    id : Number
- *    password : string
- *    name : string
+ *    id : Number;
+ *    password : string;
+ *    name : string;
  * }
  *   @param params CpInfoParams
  *   @return Promise<unfinded>
