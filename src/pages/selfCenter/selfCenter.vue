@@ -267,7 +267,7 @@
 
           <div
             class="collect-item"
-            v-for="(item,index) in post.slice((currentpage- 
+            v-for="(item,index) in post.slice((currentpage-
 
     1)*pagesize,currentpage*pagesize)"
             :key="index"
@@ -300,8 +300,7 @@
 
           <div
             class="collect-item"
-            v-for="(item,index) in post.slice((currentpage- 
-
+            v-for="(item,index) in post.slice((currentpage-
     1)*pagesize,currentpage*pagesize)"
             :key="index"
           >
@@ -360,100 +359,99 @@
   </div>
 </template>
 <script>
-import holder from "@/components/header/header";
-import foot from "@/components/footer/footer";
-import Vue from "vue";
+import Vue from 'vue'
+import holder from '@/components/header/header'
+import foot from '@/components/footer/footer'
 
-import { Checkbox } from "element-ui";
-import { Switch } from "element-ui";
-import { Pagination } from "element-ui";
-Vue.use(Checkbox);
-Vue.use(Switch);
-Vue.use(Pagination);
+import { Checkbox, Switch, Pagination } from 'element-ui'
+Vue.use(Checkbox)
+Vue.use(Switch)
+Vue.use(Pagination)
+
 export default {
-  name: "selfCenter",
+  name: 'selfCenter',
   components: {
     holder,
     foot
   },
-  data() {
+  data () {
     return {
-      feather: ["个人信息", "我的简历", "已收藏", "已投递", "账号安全"],
+      feather: ['个人信息', '我的简历', '已收藏', '已投递', '账号安全'],
       current: 0,
-      zhuti: ["简历名称", "默认设置", "操作"],
+      zhuti: ['简历名称', '默认设置', '操作'],
       checked: false,
       value2: false,
       value1: true,
       headitem: [
         {
-          name: "职位名称",
+          name: '职位名称',
           id: 0
         },
         {
-          name: "公司名称",
+          name: '公司名称',
           id: 1
         },
         {
-          name: "收藏时间",
+          name: '收藏时间',
           id: 2
         },
         {
-          name: "操作",
+          name: '操作',
           id: 3
         }
       ],
       post: [
         {
-          positionname: "缝纫机操作工111",
-          companyname: "温州皮鞋厂",
-          posttime: "2018-09-19"
+          positionname: '缝纫机操作工111',
+          companyname: '温州皮鞋厂',
+          posttime: '2018-09-19'
         },
         {
-          positionname: "缝纫机操作工222",
-          companyname: "温州皮鞋厂",
-          posttime: "2018-09-19"
+          positionname: '缝纫机操作工222',
+          companyname: '温州皮鞋厂',
+          posttime: '2018-09-19'
         },
         {
-          positionname: "缝纫机操作工333",
-          companyname: "温州皮鞋厂",
-          posttime: "2018-09-19"
+          positionname: '缝纫机操作工333',
+          companyname: '温州皮鞋厂',
+          posttime: '2018-09-19'
         },
         {
-          positionname: "缝纫机操作工444",
-          companyname: "温州皮鞋厂",
-          posttime: "2018-09-19"
+          positionname: '缝纫机操作工444',
+          companyname: '温州皮鞋厂',
+          posttime: '2018-09-19'
         }
       ],
       pagesize: 1,
       currentpage: 1
-    };
+    }
   },
   methods: {
-    c() {
-      console.log(111);
+    c () {
+      console.log(111)
     },
-    achange(val) {
+    achange (val) {
       if (this.value2) {
-        this.value2 = !val;
+        this.value2 = !val
       } else {
-        this.value2 = false;
+        this.value2 = false
       }
     },
-    bchange(val) {
+    bchange (val) {
       if (this.value1) {
-        this.value1 = !val;
+        this.value1 = !val
       } else {
-        this.value1 = false;
+        this.value1 = false
       }
     },
-    handlesizepage(size) {
-      this.pagesize = size;
+    handlesizepage (size) {
+      this.pagesize = size
     },
-    handlecurrentchange(page) {
-      this.currentpage = page;
+    handlecurrentchange (page) {
+      this.currentpage = page
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .selfcenter {

@@ -1,9 +1,24 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:8080' // 统一设置域名，方便日后维护。
+/* baseURL基础地址 */
+const ajax = axios.create({
+  baseURL: 'http://localst:8080'
+})
+
+/**
+ * interface CpInfoParams {
+ *    id : Number
+ *    password : string
+ *    name : string
+ * }
+ *   @param params CpInfoParams
+ *   @return Promise<unfinded>
+*/
+
+export const login = params =>
+  ajax.post('/user/login.do', params).then(res => res.data)
 
 /*
 为了方便日后的维护，axios相关的内容统一封装到这里，不要让axios的方法散落在各个页面，统一都在这里 日后好维护。将axios的方法封装在这里，哪里要用，就在哪里按需导入即可。如：
-
 export const checkUser = (param) => {
 
   return axios.post('/user/login.do', param).then(res => res.data)

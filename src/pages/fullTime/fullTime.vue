@@ -1,8 +1,6 @@
 <template>
   <div>
     <holder></holder>
-    {{this.msg}}
-    <h1>正在建设中...</h1>
     <foot></foot>
   </div>
 </template>
@@ -23,5 +21,4 @@ export default {
 }
 </script>
 <style scoped>
-
 </style>
