@@ -18,7 +18,15 @@ export default {
 </script>
 <style lang="scss">
 .fulltime {
+  box-sizing: content-box;
+  border: 1px dashed #6c6c6c;
   max-width: 33.33%;
   width: 33.33%;
+  margin-bottom:.825rem;
+
+  .f-header{
+    padding-left: 10px;
+    color: #000;
+  }
 }
 </style>

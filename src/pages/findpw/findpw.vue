@@ -5,7 +5,7 @@
      <div class="logo">
         <img class="logosec" src="../../assets/images/logo.png">
      </div>
-     
+
        <div class="content1">
          <div class="content">
          <div class="header" >找回密码</div>
@@ -15,7 +15,7 @@
              <input type="email" v-model="email" placeholder="请输入注册手机号">
            </div>
          </div>
-         <div class="common ">
+                  <div class="common ">
            <div style="padding:5px 0;">验证码：</div>
            <div class="dmima inputs">
              <input type="password" v-model="password" placeholder="请输入验证码">
@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       email: null,
-      password:null,
+      password: null
     }
   }
 }
@@ -119,7 +119,7 @@ export default {
                display:flex;
                justify-content:center;
                margin:60px 20px 0;
-               
+
                div{
                  flex:1;
                  padding:5px 0;

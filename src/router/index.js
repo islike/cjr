@@ -19,7 +19,7 @@ Vue.use(Router)
 const router = new Router({
   linkActiveClass: 'active',
   routes: [
-    { path: '/', component: home },
+    { path: '/', component: resolve => require(home, resolve) },
     { path: '/home', name: 'home', component: home },
     { path: '/fulltime', name: 'fullTime', component: fullTime },
     { path: '/parttime', name: 'parttTime', component: partTime },
