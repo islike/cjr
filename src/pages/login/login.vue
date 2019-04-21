@@ -32,36 +32,36 @@
   </div>
 </template>
 <script>
-import holder from "@/components/header/header";
-import foot from "@/components/footer/footer";
+import holder from '@/components/header/header'
+import foot from '@/components/footer/footer'
 export default {
-  name: "login",
+  name: 'login',
   components: {
     foot,
     holder
   },
-  data() {
+  data () {
     return {
       address: null,
       password: null,
       signin: true,
       desicion: true
-    };
+    }
   },
   methods: {
-    signup() {
-      this.signin = !this.signin;
+    signup () {
+      this.signin = !this.signin
     },
-    forgetword() {
-      this.desicion = false;
-      this.signin = false;
+    forgetword () {
+      this.desicion = false
+      this.signin = false
     },
-    signup1() {
-      this.signin = true;
-      this.desicion = true;
+    signup1 () {
+      this.signin = true
+      this.desicion = true
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .login {
