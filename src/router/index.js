@@ -19,7 +19,7 @@ Vue.use(Router)
 const router = new Router({
   linkActiveClass: 'active',
   routes: [
-    { path: '/', component: resolve => require(home, resolve) },
+    { path: '/', component: home },
     { path: '/home', name: 'home', component: home },
     { path: '/fulltime', name: 'fullTime', component: fullTime },
     { path: '/parttime', name: 'parttTime', component: partTime },
@@ -34,6 +34,10 @@ const router = new Router({
     { path: '/selfcenter', name: 'selfCenter', component: selfCenter },
     { path: '/about', name: 'about', component: about }
   ]
+})
+router.beforeEach((to, from, next) => {
+  console.log(to, from)
+  next()
 })
 
 export default router

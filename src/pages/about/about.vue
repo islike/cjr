@@ -20,21 +20,21 @@
   </div>
 </template>
 <script>
-import holder from "@/components/header/header";
-import foot from "@/components/footer/footer";
+import holder from '@/components/header/header'
+import foot from '@/components/footer/footer'
 export default {
-  name: "about",
+  name: 'about',
   components: {
     foot,
     holder
   },
-  data() {
+  data () {
     return {
-      feather: ["关于我们", "加入我们", "网站声明"],
+      feather: ['关于我们', '加入我们', '网站声明'],
       current: 0
-    };
+    }
   }
-};
+}
 </script>
 <style lang=less scoped>
 .about {

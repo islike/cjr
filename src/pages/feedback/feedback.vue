@@ -42,7 +42,7 @@ export default {
   data () {
     return {
       meassage: null,
-      content:null,
+      content: null
     }
   }
 }
@@ -54,26 +54,25 @@ export default {
      height:500px;
      padding-left:20px;
 
-
      .common{
        display:flex;
        margin-top:15px;
- 
+
            div:nth-child(2){
              margin-left:10px;
-            
+
              border:1px solid #ccc;
 
              select{
                width:150px;
-               
+
              }
 
              textarea{
                border-radius:3px;
              }
            }
-           
+
        }
 
        .submit{
@@ -81,10 +80,9 @@ export default {
          justify-content:center;
          color:white;
          margin-top:50px;
-        
 
            div{
-           
+
               text-align:center;
               padding:5px 50px;
               background:orangered;

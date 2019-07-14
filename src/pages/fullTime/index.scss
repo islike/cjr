@@ -1,0 +1,21 @@
+.nav{
+      .com{
+      display:inline-block;
+      padding:10px 15px;
+      transition-property: border-radius;
+      transition-delay:1s;
+      transition-timing-function: ease;
+      margin: 0px 10px 0;
+    }
+    .color{
+      color:#fff;
+      background: orangered;
+      border-radius:5px;
+    }
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  height:480px;
+  padding:40px 20px;
+}

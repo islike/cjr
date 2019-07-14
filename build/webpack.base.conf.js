@@ -9,7 +9,7 @@ function resolve (dir) {
 }
 
 const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
+  test: /\.(js)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
@@ -35,7 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -80,7 +80,7 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: /\.less$/, 
+        test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader'
       },
       { test: /\.styl$/,

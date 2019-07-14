@@ -18,7 +18,7 @@
             <div>忘记密码？</div>
           </div>
         </router-link>
-        <div class="loginbutton">登录</div>
+        <div class="loginbutton" @click="login">登录</div>
       </div>
       <div class="Lfooter">
         <span>还没有账号?</span>
@@ -32,8 +32,14 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 import holder from '@/components/header/header'
 import foot from '@/components/footer/footer'
+import { login } from '@/axios/index'
+import {Message} from 'element-ui'
+// 由于element-ui没有提供install方法
+Vue.use(Message)
+Vue.prototype.$message = Message
 export default {
   name: 'login',
   components: {
@@ -59,6 +65,30 @@ export default {
     signup1 () {
       this.signin = true
       this.desicion = true
+    },
+    login () {
+      var loginform = {
+        user: this.address,
+        password: this.password
+
+      }
+      var that = this
+      login(loginform).then(function (res) {
+        if (res.code) {
+          that.$message({
+            message: '登录成功',
+            type: 'success'
+          })
+          that.$store.state.login = true
+        }
+        setTimeout(function () {
+          that.$router.push({name: 'home'})
+        }, 2000)
+      }).catch(function (res) {
+        this.$message({
+          message: '密码错误'
+        })
+      })
     }
   }
 }

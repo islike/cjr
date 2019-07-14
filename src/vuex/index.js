@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 var store = new Vuex.Store({
   state: {
+    login: false
   },
   mutations: {
   }

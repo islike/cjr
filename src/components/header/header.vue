@@ -66,13 +66,16 @@ export default {
   name: 'holder',
   data () {
     return {
-      login: true
+      login: !this.$store.state.login
     }
   },
   methods: {
     handleCommand (command) {
       if (command === 'a') {
         this.$router.push({name: 'selfDetail'})
+      } else if (command === 'd') {
+        this.$store.state.login = false
+        this.$router.push('/')
       }
     }
   }

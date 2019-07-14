@@ -30,7 +30,7 @@
             点击注册表示你同意
             <span style="color:blue">《用户使用协议》</span>
           </div>
-          <div class="signupbutton">立即注册</div>
+          <div class="signupbutton" @click="regiser">立即注册</div>
         </div>
       </div>
       <div class="Lfooter">
@@ -44,22 +44,51 @@
   </div>
 </template>
 <script>
-import holder from "@/components/header/header";
-import foot from "@/components/footer/footer";
+import Vue from 'vue'
+import holder from '@/components/header/header'
+import foot from '@/components/footer/footer'
+import {register} from '@/axios/index'
+import {Message} from 'element-ui'
+// 由于element-ui没有提供install方法
+Vue.use(Message)
+Vue.prototype.$message = Message
 export default {
-  name: "register",
+  name: 'register',
   components: {
     holder,
     foot
   },
-  data() {
+  data () {
     return {
-      email: "",
-      password: "",
-      repassword: ""
-    };
-  }
-};
+      email: '',
+      password: '',
+      repassword: ''
+    }
+  },
+  methods: {
+    regiser () {
+      var registerfrom = {
+        user: this.email,
+        password: this.password,
+        repassword: this.repassword
+      }
+      var that = this
+      register(registerfrom).then(function (res) {
+        if (res.code) {
+          that.$message({
+            message: res.message,
+            type: 'success'
+          })
+          alert(res.message)
+          setTimeout(() => {
+            that.$router.push('/login')
+          }, 2000)
+        } else {
+          alert(res.message)
+        }
+      })
+    }}
+}
 </script>
 <style lang="less" scoped>
 .regiser {
