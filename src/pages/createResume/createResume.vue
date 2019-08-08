@@ -1,26 +1,15 @@
 <template>
-  <div>
-    <holder></holder>
-    {{this.msg}}
-    <foot></foot>
-  </div>
+  <div>{{msg}}</div>
 </template>
 <script>
-import holder from '@/components/header/header'
-import foot from '@/components/footer/footer'
 export default {
-  name: 'createResume',
-  components: {
-    holder,
-    foot
-  },
-  data () {
+  name: "createResume",
+  data() {
     return {
-      msg: '当前是创建简历页面'
-    }
+      msg: "当前是创建简历页面"
+    };
   }
-}
+};
 </script>
 <style scoped>
-
 </style>

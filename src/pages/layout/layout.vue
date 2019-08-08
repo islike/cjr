@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <holder></holder>
     <!-- body -->
-    <router-view />
+    <router-view class="layout" />
     <!--尾部  -->
     <foot></foot>
   </div>
@@ -28,6 +28,9 @@ export default {
   height: 100%;
   overflow: auto;
   background-color: #f8fafc;
+}
+.layout {
+  height: calc(100% - 350px);
 }
 </style>
 

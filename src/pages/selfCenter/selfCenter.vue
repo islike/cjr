@@ -1,7 +1,6 @@
 <template>
   <div>
-    <holder></holder>
-    <img src="../../assets/images/backg.jpg" style="width:100%;height:150px;display:block;">
+    <img src="../../assets/images/backg.jpg" style="width:100%;height:150px;display:block;" />
     <div class="selfcenter">
       <div class="left">
         <div
@@ -22,9 +21,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div style="display:flex;justify-content:space-around">
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -55,9 +54,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -104,9 +103,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -119,9 +118,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -134,9 +133,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -149,9 +148,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -164,9 +163,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -179,9 +178,9 @@
             <div class="sex sec">
               <div>:性别</div>
               <div>
-                <input type="radio" id="man" name="ssex">
+                <input type="radio" id="man" name="ssex" />
                 <label for="man">男</label>
-                <input type="radio" id="woman" name="ssex">
+                <input type="radio" id="woman" name="ssex" />
                 <label for="woman">女</label>
               </div>
             </div>
@@ -202,7 +201,7 @@
                 type="checkbox"
                 value="1.我的简历A.pdf"
                 style="outline:none;width:15px;height:15px;vertical-align:middle"
-              >
+              />
               <span
                 style="color:blue;padding-left:10px;vertical-align:middle"
                 @click="c"
@@ -227,7 +226,7 @@
                 type="checkbox"
                 value="1.我的简历A.pdf"
                 style="outline:none;width:15px;height:15px;vertical-align:middle"
-              >
+              />
               <span
                 style="color:blue;padding-left:10px;vertical-align:middle"
                 @click="c"
@@ -273,7 +272,7 @@
             :key="index"
           >
             <div class="collect-item-div">
-              <input type="checkbox" class="postinput">
+              <input type="checkbox" class="postinput" />
               <span style="vertical-align:middle; padding-left: 10px;">{{item.positionname}}</span>
             </div>
             <div class="collect-item-div" style="vertical-align:middle;">{{item.companyname}}</div>
@@ -327,131 +326,123 @@
             <div style="padding-bottom:30px">更改邮箱账号</div>
             <div class="Acontent">
               <span>邮件账号:</span>
-              <input type="email" placeholder="请输入邮箱账号">
+              <input type="email" placeholder="请输入邮箱账号" />
               <div class="subcode" style="display:inline-block;">发送验证码</div>
             </div>
             <div class="Acontent">
               <span>验证码:</span>
-              <input placeholder="请输入验证码">
+              <input placeholder="请输入验证码" />
             </div>
           </div>
           <div class="accountup">
             <div style="padding-top:30px">更改密码</div>
             <div class="Acontent">
               <span>原始密码:</span>
-              <input type="text" placeholder="请输入密码">
+              <input type="text" placeholder="请输入密码" />
             </div>
             <div class="Acontent">
               <span>新密码:</span>
-              <input type="text" placeholder="请输入新密码">
+              <input type="text" placeholder="请输入新密码" />
             </div>
             <div class="Acontent">
               <span>确认密码:</span>
-              <input type="text" placeholder="请再输入一次密码">
+              <input type="text" placeholder="请再输入一次密码" />
             </div>
           </div>
           <div class="accountsave">保存</div>
         </div>
       </div>
     </div>
-
-    <foot></foot>
   </div>
 </template>
 <script>
-import Vue from 'vue'
-import holder from '@/components/header/header'
-import foot from '@/components/footer/footer'
+import Vue from "vue";
 
-import { Checkbox, Switch, Pagination } from 'element-ui'
-Vue.use(Checkbox)
-Vue.use(Switch)
-Vue.use(Pagination)
+import { Checkbox, Switch, Pagination } from "element-ui";
+Vue.use(Checkbox);
+Vue.use(Switch);
+Vue.use(Pagination);
 
 export default {
-  name: 'selfCenter',
-  components: {
-    holder,
-    foot
-  },
-  data () {
+  name: "selfCenter",
+  data() {
     return {
-      feather: ['个人信息', '我的简历', '已收藏', '已投递', '账号安全'],
+      feather: ["个人信息", "我的简历", "已收藏", "已投递", "账号安全"],
       current: 0,
-      zhuti: ['简历名称', '默认设置', '操作'],
+      zhuti: ["简历名称", "默认设置", "操作"],
       checked: false,
       value2: false,
       value1: true,
       headitem: [
         {
-          name: '职位名称',
+          name: "职位名称",
           id: 0
         },
         {
-          name: '公司名称',
+          name: "公司名称",
           id: 1
         },
         {
-          name: '收藏时间',
+          name: "收藏时间",
           id: 2
         },
         {
-          name: '操作',
+          name: "操作",
           id: 3
         }
       ],
       post: [
         {
-          positionname: '缝纫机操作工111',
-          companyname: '温州皮鞋厂',
-          posttime: '2018-09-19'
+          positionname: "缝纫机操作工111",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
         },
         {
-          positionname: '缝纫机操作工222',
-          companyname: '温州皮鞋厂',
-          posttime: '2018-09-19'
+          positionname: "缝纫机操作工222",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
         },
         {
-          positionname: '缝纫机操作工333',
-          companyname: '温州皮鞋厂',
-          posttime: '2018-09-19'
+          positionname: "缝纫机操作工333",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
         },
         {
-          positionname: '缝纫机操作工444',
-          companyname: '温州皮鞋厂',
-          posttime: '2018-09-19'
+          positionname: "缝纫机操作工444",
+          companyname: "温州皮鞋厂",
+          posttime: "2018-09-19"
         }
       ],
       pagesize: 1,
       currentpage: 1
-    }
+    };
   },
   methods: {
-    c () {
-      console.log(111)
+    c() {
+      console.log(111);
     },
-    achange (val) {
+    achange(val) {
       if (this.value2) {
-        this.value2 = !val
+        this.value2 = !val;
       } else {
-        this.value2 = false
+        this.value2 = false;
       }
     },
-    bchange (val) {
+    bchange(val) {
       if (this.value1) {
-        this.value1 = !val
+        this.value1 = !val;
       } else {
-        this.value1 = false
+        this.value1 = false;
       }
     },
-    handlesizepage (size) {
-      this.pagesize = size
+    handlesizepage(size) {
+      this.pagesize = size;
     },
-    handlecurrentchange (page) {
-      this.currentpage = page
+    handlecurrentchange(page) {
+      this.currentpage = page;
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 .selfcenter {

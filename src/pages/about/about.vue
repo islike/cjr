@@ -1,40 +1,30 @@
 <template>
-  <div>
-    <holder></holder>
-    <div class="about">
-      <div class="left">
-        <div
-          v-for="(item ,index) in feather"
-          v-html="item"
-          :class=" current == index ? 'redright' : ''"
-          @click="current = index"
-          :key="index"
-        ></div>
-      </div>
-      <div class="right">
-        <div class="header" v-html="feather[current]"></div>
-        <div class="content">很棒棒团</div>
-      </div>
+  <div class="about">
+    <div class="left">
+      <div
+        v-for="(item ,index) in feather"
+        v-html="item"
+        :class=" current == index ? 'redright' : ''"
+        @click="current = index"
+        :key="index"
+      ></div>
     </div>
-    <foot></foot>
+    <div class="right">
+      <div class="header" v-html="feather[current]"></div>
+      <div class="content">很棒棒团</div>
+    </div>
   </div>
 </template>
 <script>
-import holder from '@/components/header/header'
-import foot from '@/components/footer/footer'
 export default {
-  name: 'about',
-  components: {
-    foot,
-    holder
-  },
-  data () {
+  name: "about",
+  data() {
     return {
-      feather: ['关于我们', '加入我们', '网站声明'],
+      feather: ["关于我们", "加入我们", "网站声明"],
       current: 0
-    }
+    };
   }
-}
+};
 </script>
 <style lang=less scoped>
 .about {

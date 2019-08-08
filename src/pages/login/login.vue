@@ -28,8 +28,6 @@
 </template>
 <script>
 import Vue from "vue";
-import holder from "@/components/header/header";
-import foot from "@/components/footer/footer";
 import { login } from "@/axios/index";
 import { Message } from "element-ui";
 // 由于element-ui没有提供install方法
@@ -37,10 +35,6 @@ Vue.use(Message);
 Vue.prototype.$message = Message;
 export default {
   name: "login",
-  components: {
-    foot,
-    holder
-  },
   data() {
     return {
       address: null,
