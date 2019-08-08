@@ -1,108 +1,69 @@
 <template>
-  <div id="app" class="app">
-    <holder></holder>
-      <el-container class="elContainer">
-          <el-aside class="elAside">
-             <div class="sider-nav">
-                <div 
-                  v-for="(item,index) in sidebarItems" 
-                  :key="index" 
-                  :class="[isActive === index ? 'active': '', 'module']" 
-                  @click="moduleClickHandle(item.src, index, $event)">
-                    {{item.text}}
-                </div>
-            </div>
-          </el-aside>
-          <el-main class="elMain">
-             <div>
-                <router-view></router-view>
-             </div>
-          </el-main>
-      </el-container>
-    <foot></foot>
+  <div class="about">
+    <div class="left">
+      <div
+        v-for="(item ,index) in feather"
+        v-html="item"
+        :class=" current == index ? 'redright' : ''"
+        @click="current = index"
+        :key="index"
+      ></div>
+    </div>
+    <div class="right">
+      <div class="header" v-html="feather[current]"></div>
+      <div class="content">很棒棒团</div>
+    </div>
   </div>
 </template>
 <script>
-import holder from '@/components/header/header'
-import foot from '@/components/footer/footer'
-import Vue from 'vue'
-import { Container,Aside, Main} from 'element-ui'
-Vue.use(Container);
-Vue.use(Aside);
-Vue.use(Main);
-
-
 export default {
-  name: 'about',
-   data() {
-        return {
-            isActive: 0,
-            sidebarItems:[{
-                text:'关于我们',
-                src:'/about/AboutUs'
-            },{
-                text:'加入我们',
-                src:'/about/JoinUs'
-            },{
-                text:'网站声明',
-                src:'/about/declare'
-            }],
-        }
-    },
-    methods: {
-        // 模块点击事件。
-        moduleClickHandle(routerLink, index, event) {
-            this.isActive = index;
-            this.$router.push({ path: routerLink });
-        }
-    },
-  components: {
-    foot,
-    holder
-  },
-  created() {
-            this.$router.replace('/about/AboutUs');
-        }    
-}
-
-
+  name: "about",
+  data() {
+    return {
+      feather: ["关于我们", "加入我们", "网站声明"],
+      current: 0
+    };
+  }
+};
 </script>
-<style lang="less" scoped>
-   .elContainer{
-     width: 1200px;
-     margin: 0 auto;
-     margin-top: 30px;
-     .elAside{
-        width: 220px !important;
-        box-sizing: border-box;
-        .sider-nav{
-          width: 150px;
-          margin-left: 70px;
-          box-sizing: border-box;
-          border: 1px solid #eee;
-          .module{
-            height: 50px; 
-            line-height: 50px;
-            text-align: center;
-            cursor: pointer; 
-            font-size: 16px; 
-            border-bottom: 1px solid #eeeeee;
-            border-left: 3px solid #fff;
-          }
-          .module:nth-child(3){
-            border-bottom:none;
-          }
-          .module.active{
-            border-left: 3px solid orange;
-          }
-        }
-     }
-     .elMain{
-        width: 950px !important;
-        height: 440px;
-        margin-left: 30px;
-        border: 1px solid #eeeeee;
-        margin-bottom: 30px;
-     }
-   }
+<style lang=less scoped>
+.about {
+  background: #ccc;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  .left {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+
+    .redright {
+      border-left: 2px solid red;
+    }
+
+    div {
+      padding: 5px 0px 5px 10px;
+      background: white;
+      margin-top: 1px;
+    }
+  }
+
+  .right {
+    flex: 1;
+    background: white;
+    margin: 0px 10px;
+    font-size: 14px;
+
+    .header {
+      padding: 5px 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .content {
+      padding-left: 10px;
+    }
+  }
+}
 </style>

@@ -1,0 +1,46 @@
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: orangered !important;
+}
+
+.el-switch__label--left {
+  position: relative;
+  left: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+
+.el-switch__label--right {
+  position: relative;
+  right: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+
+.el-switch__label.is-active {
+  z-index: 1111;
+  color: #fff;
+}
+
+.el-switch__label--left {
+  position: relative;
+  left: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+
+.el-switch__label--right {
+  position: relative;
+  right: 46px;
+  color: #fff;
+  z-index: -1111;
+}
+
+.el-switch__label--right.is-active {
+  z-index: 1111;
+  color: #fff !important;
+}
+
+.el-switch__label--left.is-active {
+  z-index: 1111;
+  color: #9c9c9c !important;
+}
