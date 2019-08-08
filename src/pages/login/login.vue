@@ -1,103 +1,99 @@
 <template>
-  <div>
-    <holder></holder>
-    <div class="login">
-      <img src="../../assets/images/logo.png">
-      <div class="content">
-        <div class="header">登录</div>
-        <div class="yonghu inputm">
-          <div class="icon1"></div>
-          <input type="text" placeholder="请输入手机号码/邮箱/用户名" v-model="address">
-        </div>
-        <div class="mima inputm">
-          <div class="icon"></div>
-          <input type="password" placeholder="请输入密码" v-model="password">
-        </div>
-        <router-link to="/findpw">
-          <div class="forgetword">
-            <div>忘记密码？</div>
-          </div>
-        </router-link>
-        <div class="loginbutton" @click="login">登录</div>
+  <div class="login">
+    <img src="../../assets/images/logo.png" />
+    <div class="content">
+      <div class="header">登录</div>
+      <div class="yonghu inputm">
+        <div class="icon1"></div>
+        <input type="text" placeholder="请输入手机号码/邮箱/用户名" v-model="address" />
       </div>
-      <div class="Lfooter">
-        <span>还没有账号?</span>
-        <router-link to="/register">
-          <span class="signup">免费注册</span>
-        </router-link>
+      <div class="mima inputm">
+        <div class="icon"></div>
+        <input type="password" placeholder="请输入密码" v-model="password" />
       </div>
+      <router-link to="/findpw">
+        <div class="forgetword">
+          <div>忘记密码？</div>
+        </div>
+      </router-link>
+      <div class="loginbutton" @click="login">登录</div>
     </div>
-
-    <foot></foot>
+    <div class="Lfooter">
+      <span>还没有账号?</span>
+      <router-link to="/register">
+        <span class="signup">免费注册</span>
+      </router-link>
+    </div>
   </div>
 </template>
 <script>
-import Vue from 'vue'
-import holder from '@/components/header/header'
-import foot from '@/components/footer/footer'
-import { login } from '@/axios/index'
-import {Message} from 'element-ui'
+import Vue from "vue";
+import holder from "@/components/header/header";
+import foot from "@/components/footer/footer";
+import { login } from "@/axios/index";
+import { Message } from "element-ui";
 // 由于element-ui没有提供install方法
-Vue.use(Message)
-Vue.prototype.$message = Message
+Vue.use(Message);
+Vue.prototype.$message = Message;
 export default {
-  name: 'login',
+  name: "login",
   components: {
     foot,
     holder
   },
-  data () {
+  data() {
     return {
       address: null,
       password: null,
       signin: true,
       desicion: true
-    }
+    };
   },
   methods: {
-    signup () {
-      this.signin = !this.signin
+    signup() {
+      this.signin = !this.signin;
     },
-    forgetword () {
-      this.desicion = false
-      this.signin = false
+    forgetword() {
+      this.desicion = false;
+      this.signin = false;
     },
-    signup1 () {
-      this.signin = true
-      this.desicion = true
+    signup1() {
+      this.signin = true;
+      this.desicion = true;
     },
-    login () {
+    login() {
       var loginform = {
         user: this.address,
         password: this.password
-
-      }
-      var that = this
-      login(loginform).then(function (res) {
-        if (res.code) {
-          that.$message({
-            message: '登录成功',
-            type: 'success'
-          })
-          that.$store.state.login = true
-        }
-        setTimeout(function () {
-          that.$router.push({name: 'home'})
-        }, 2000)
-      }).catch(function (res) {
-        this.$message({
-          message: '密码错误'
+      };
+      var that = this;
+      login(loginform)
+        .then(function(res) {
+          if (res.code) {
+            that.$message({
+              message: "登录成功",
+              type: "success"
+            });
+            that.$store.state.login = true;
+          }
+          setTimeout(function() {
+            that.$router.push({ name: "home" });
+          }, 2000);
         })
-      })
+        .catch(function(res) {
+          this.$message({
+            message: "密码错误"
+          });
+        });
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 .login {
-  height: 500px;
+  height: calc(100% - 350px);
   width: 100%;
-  background: url(../../assets/images/backg.jpg);
+  background-image: url(../../assets/images/backg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
