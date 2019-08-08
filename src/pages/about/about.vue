@@ -11,7 +11,7 @@
     </div>
     <div class="right">
       <div class="header" v-html="feather[current]"></div>
-      <div class="content">很棒棒团</div>
+      <div class="content">很棒棒团2</div>
     </div>
   </div>
 </template>
